@@ -24,11 +24,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ADDITIONAL_CXX_FLAG}")
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  cmake_modules
 )
+
+find_package(Eigen REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
 
 
 ###################################
@@ -36,8 +38,8 @@ find_package(catkin REQUIRED COMPONENTS
 ###################################
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES uav_utils
-  CATKIN_DEPENDS roscpp rospy message_generation
+  # LIBRARIES uav_utils
+  CATKIN_DEPENDS roscpp rospy
   DEPENDS system_lib
 )
 
@@ -45,17 +47,11 @@ catkin_package(
 ## Build ##
 ###########
 
+
 include_directories(
   include
+  ${Eigen_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
-)
-
-add_library(uav_utils
-  src/converters.cpp
-)
-
-target_link_libraries(uav_utils
-  ${catkin_LIBRARIES}
 )
 
 #############

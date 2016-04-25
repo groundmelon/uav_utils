@@ -3,9 +3,6 @@
 
 #include <ros/ros.h>
 
-#include <uav_utils/DebugMsg.h>
-#include <uav_utils/DebugMsgCell.h>
-// #include <uav_utils/UAVLogger.h>
 #include <uav_utils/converters.h>
 #include <uav_utils/geometry_utils.h>
 
