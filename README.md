@@ -4,7 +4,7 @@ Provide some widely used utilities in uav development. **No library. Only header
 
 Dependency: Eigen
 
-This package is deliberately designed not to find Eigen automatically, because there are many cases that you would like to use your own Eigen instead of that in the system directory (**/usr/include/eigen3/Eigen**).
+This package is deliberately designed not to find Eigen automatically, because there are many cases that you would like to use your own Eigen instead of that in the system directory (**/usr/include/eigen3**).
 
 ### How to resolve "fatal error: Eigen/Dense: No such file or directory" problem
 
