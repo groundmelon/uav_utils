@@ -24,14 +24,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ADDITIONAL_CXX_FLAG}")
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  cmake_modules
 )
 
-find_package(Eigen REQUIRED)
-
-## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
-
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+find_package(Eigen REQUIRED) # try to find manually installed eigen (Usually in /usr/local with provided FindEigen3.cmake)
 
 ###################################
 ## catkin specific configuration ##
@@ -50,7 +46,7 @@ catkin_package(
 
 include_directories(
   include
-  ${Eigen_INCLUDE_DIRS}
+  /usr/local/include/eigen3/
   ${catkin_INCLUDE_DIRS}
 )
 
