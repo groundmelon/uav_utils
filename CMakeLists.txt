@@ -40,7 +40,7 @@ catkin_package(
   INCLUDE_DIRS include
   # LIBRARIES uav_utils
   CATKIN_DEPENDS roscpp rospy
-  DEPENDS system_lib
+  # DEPENDS system_lib
 )
 
 ###########
