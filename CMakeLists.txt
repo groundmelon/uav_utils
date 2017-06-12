@@ -17,7 +17,7 @@ else()
 endif()
 
 ## Add some compile flags
-set(ADDITIONAL_CXX_FLAG "-Wall -O3 -march=native")
+set(ADDITIONAL_CXX_FLAG "-Wall -O3 -g")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ADDITIONAL_CXX_FLAG}")
 
 ## Find catkin macros and libraries
@@ -46,7 +46,7 @@ catkin_package(
 
 include_directories(
   include
-  /usr/local/include/eigen3/
+  ${EIGEN_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 
